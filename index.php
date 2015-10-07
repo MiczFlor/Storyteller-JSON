@@ -48,8 +48,8 @@ $storyboard = json_decode(file_get_contents("storyboard.json"), true); // use tr
 
   <link href="assets/css/style.css" rel="stylesheet">
   
-  <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script-->
-  <script src="assets/js/jquery2.1.3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!--script src="assets/js/jquery2.1.3.min.js"></script-->
   
 </head>
 
