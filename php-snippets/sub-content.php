@@ -57,24 +57,26 @@ if((isset($story['snippets']) && count($story['snippets']) > 0) OR (isset($story
   print "
         ".$story['intro'];
   }
-  // go through the snippets in the array and print text or image 
-  foreach($story['snippets'] as $snippetid => $snippetvalues) {
-    if(isset($snippetvalues['src'])) {
-      print "
-          <figure class=\"cms-image ".$snippetvalues['align']."\" style=\"max-width: 360px;\">
-            <img src=\"".$snippetvalues['src']."\" style=\"max-width: 100%\" rel=\"resizable\" alt=\"\" />
-            <figcaption>".$snippetvalues['title']."
-               <span class=\"photographer\">
-                 ".$snippetvalues['credits']."
-               </span>
-            </figcaption>
-          </figure>";
-    }
-    if(isset($snippetvalues['text'])) {
-      print "
-        ".$snippetvalues['text'];
-    }
-  } // foreach($story['snippets']
+  // go through the snippets in the array and print text or image
+  if(isset($story['snippets']) && count($story['snippets']) > 0) {
+    foreach($story['snippets'] as $snippetid => $snippetvalues) {
+      if(isset($snippetvalues['src'])) {
+        print "
+            <figure class=\"cms-image ".$snippetvalues['align']."\" style=\"max-width: 360px;\">
+              <img src=\"".$snippetvalues['src']."\" style=\"max-width: 100%\" rel=\"resizable\" alt=\"\" />
+              <figcaption>".$snippetvalues['title']."
+                 <span class=\"photographer\">
+                   ".$snippetvalues['credits']."
+                 </span>
+              </figcaption>
+            </figure>";
+      }
+      if(isset($snippetvalues['text'])) {
+        print "
+          ".$snippetvalues['text'];
+      }
+    } // foreach($story['snippets']
+  }
   print "
       </div><!-- / .text -->
     </div><!-- / .row -->";
